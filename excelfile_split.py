@@ -1,3 +1,7 @@
+/*
+*这个程序是用来拆分表格的
+*/
+
 import pandas as pd
 import os
 
@@ -94,8 +98,11 @@ def get_subdir_path_list(dir_path):
             subdir_path_list.append(subdir_path)
     return subdir_path_list
 
-if __name__ == '__main__':
 
+"""
+这里是主程序，工作中的拆分通常会根据多个条件进行多次拆分，并且需要分门别类的放入对应的文件夹内，所以需要根据拆分条件多次拆分
+"""
+if __name__ == '__main__':
     print("开始第一次拆分，按运管对接人")
     # 根据运管对接人进行第一次拆分
     dir_path = r'C:\Users\A\Desktop\WorksheetSplite'
