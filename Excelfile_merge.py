@@ -1,3 +1,9 @@
+"""
+这个程序是用来Excel表格合并的，合并分成两个情况：
+1、不同文件合并；
+2、同一文件内不同sheet表合并
+"""
+
 import os
 import pandas as pd
 
@@ -56,7 +62,6 @@ def get_file_path_list(dir_path):
 
 
 if __name__ == '__main__':
-
     """
     不同文件合并
     """
