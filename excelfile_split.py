@@ -1,6 +1,6 @@
-/*
-*这个程序是用来拆分表格的
-*/
+"""
+这个程序是用来拆分表格的
+"""
 
 import pandas as pd
 import os
