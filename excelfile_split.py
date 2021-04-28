@@ -107,41 +107,41 @@ if __name__ == '__main__':
     # 根据运管对接人进行第一次拆分
     dir_path = r'C:\Users\A\Desktop\WorksheetSplite'
     file_path_list = get_file_path_list(dir_path)
-    split_column1 = '负责运管'
+    split_column1 = '运管对接人'
     # acc_id需要从表格中复制到这里，否则会导致第二次拆分出现问题
     acc_id = '账户ID'
     for file_path in file_path_list:
         file_split(file_path, split_column1, acc_id)
 
-    # print("开始第二次拆分，按客户名称")
-    # print("-" * 20)
-    # # 根据客户名称进行第二次拆分
-    # # 先获取子目录绝对路径
-    # subdir_path_list = get_subdir_path_list(dir_path)
-    # split_column2 = '客户名称'
-    # # 求和变量
-    # total = "客户名称"
-    # sum_column = "金额"
-    # # 定义一个统计拆分文件总个数的变量
-    # count = 0
-    # for subdir_path in subdir_path_list:
-    #     # 获取子目录下所有文件绝对路径
-    #     file_path_list = get_file_path_list(subdir_path)
-    #     # 拆分
-    #     for file_path in file_path_list:
-    #         # file_path是第一次拆分后的文件的绝对路径，
-    #         file_split(file_path, split_column2, acc_id)
-    #         print("-" * 20)
-    #
-    #     # 求和
-    #     subdir_path_list = get_subdir_path_list(subdir_path)
-    #     for subdir_path in subdir_path_list:
-    #         # 输出要求和的目录
-    #         print(subdir_path)
-    #         file_path_list = get_file_path_list(subdir_path)
-    #         for file_path in file_path_list:
-    #             # sheet_sum(file_path, acc_id, total, sum_column)
-    #             count +=1
-    #         print("-" * 20)
-    #
-    # print("共拆分出%s个文件。" % count)
+    print("开始第二次拆分，按客户名称")
+    print("-" * 20)
+    # 根据客户名称进行第二次拆分
+    # 先获取子目录绝对路径
+    subdir_path_list = get_subdir_path_list(dir_path)
+    split_column2 = '客户名称'
+    # 求和变量
+    total = "客户名称"
+    sum_column = "金额"
+    # 定义一个统计拆分文件总个数的变量
+    count = 0
+    for subdir_path in subdir_path_list:
+        # 获取子目录下所有文件绝对路径
+        file_path_list = get_file_path_list(subdir_path)
+        # 拆分
+        for file_path in file_path_list:
+            # file_path是第一次拆分后的文件的绝对路径，
+            file_split(file_path, split_column2, acc_id)
+            print("-" * 20)
+    
+        # 求和
+        subdir_path_list = get_subdir_path_list(subdir_path)
+        for subdir_path in subdir_path_list:
+            # 输出要求和的目录
+            print(subdir_path)
+            file_path_list = get_file_path_list(subdir_path)
+            for file_path in file_path_list:
+                # sheet_sum(file_path, acc_id, total, sum_column)
+                count +=1
+            print("-" * 20)
+    
+    print("共拆分出%s个文件。" % count)
